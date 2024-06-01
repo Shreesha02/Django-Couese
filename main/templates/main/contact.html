@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+{% load static%}
+{% block content %}
+<div class="jumbotron">
+ <div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+    	<div class="card">
+           <div class="card-body">
+           <h5 class="card-title">Contact Us</h5>
+           <p class="card-text">HillTown Resort
+                                K.K.R Road, 
+                                Thekkady, Kerala, India.
+            </p>
+            
+           <p><a href="https://facebook.com/fakeprofile?id=12345" target="_blank" class="btn btn-primary">Facebook</a></p>
+           <p><a href="https://instagram.com/fakeprofile?id=67890" target="_blank" class="btn btn-primary">Instagram</a></p>
+           <p>Phone No: +91 4869 222752, 224382</p>
+           <p>Email Id: reservationshilltown@gmail.com</p>
+        </div>
+    </div>
+    </div>
+    <div class="col-sm-6">
+    	<div class="card">
+          <div class="card-body">
+          <h5 class="card-title">Get a Call Back</h5>
+
+          {% load crispy_forms_tags %}
+          <form method="post" action="/contact/">
+          	{% csrf_token %}
+          	{{form|crispy}}
+          	<button type = "Submit" class="btn btn-primary">Send a Message</button>
+          </form>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
